@@ -2,5 +2,13 @@ GlossButton
 
 Glossy buttons like inbuilt calculator app
 
-By Codepadawan
+This is for of work by Codepadawan (https://github.com/Codepadawan/GlossButton)
+Original was outdated and resulted errors in modern Xcode - Also in current Xcode
+it seems to be default to use Automatic Reference Counting [ARC] - So I fixed the
+errors, changed deprecated references to supported ones and changed it to use ARC.
+
+Originally By Codepadawan
 June 2011
+
+Updated by Oskari Rauta
+May 2013

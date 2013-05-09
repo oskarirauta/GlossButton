@@ -59,7 +59,7 @@
                 [_invocation setArgument:&self atIndex:2];                
             }
         }
-        if (text==@"X") {			
+        if ( [text isEqualToString: @"X"] ) {
 			UIImage	*image = [UIImage imageNamed:@"backspace.png"];
 			UIImageView	*imageView = [[UIImageView alloc] initWithFrame:CGRectMake (20,10,40,32)];
 			
@@ -72,7 +72,7 @@
 			
 			[imageView setImage:image];
 			[self addSubview:imageView];
-		} else if (text==@"Tab") {
+		} else if ([text isEqual:@"Tab"]) {
 			
 			UIImage	*image = [UIImage imageNamed:@"tab2.png"];
 			UIImageView	*imageView = [[UIImageView alloc] initWithFrame:CGRectMake (20,10,40,32)];
@@ -89,8 +89,8 @@
 			_pause = YES;			
 		} else {
             // Create label for button
-            UILabel *label = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
-            label.textAlignment = UITextAlignmentCenter;
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+            label.textAlignment = NSTextAlignmentCenter;
             label.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
             label.text = text;
             label.backgroundColor = [UIColor clearColor];
@@ -115,8 +115,8 @@
 - (void)setLabelWithText:(NSString*)text andSize:(float)size andVerticalShift:(float)shift {
 	// Create label for button
 	CGRect frame=CGRectMake(self.bounds.origin.x, self.bounds.origin.y+shift, self.bounds.size.width, self.bounds.size.height);
-	UILabel *label = [[[UILabel alloc] initWithFrame:frame] autorelease];
-	label.textAlignment = UITextAlignmentCenter;
+	UILabel *label = [[UILabel alloc] initWithFrame:frame];
+	label.textAlignment = NSTextAlignmentCenter;
 	label.text = text;
 	label.backgroundColor = [UIColor clearColor];
 	label.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
@@ -135,9 +135,7 @@
 
 - (id)initWithText:(NSString *)text target:(id)target selector:(SEL)selector {
 	
-	[self initWithTextAndHSB:text target:target selector:selector hue:0.0f saturation:0.0f brightness:0.0f];
-	
-	return self;
+	return [self initWithTextAndHSB:text target:target selector:selector hue:0.0f saturation:0.0f brightness:0.0f];
 	
 }
 
@@ -235,14 +233,22 @@
     
 }
 
+-(BOOL)toggled {
+	return _toggled;
+}
+
 -(void) setToggled:(BOOL)toggled {
     if (_toggled == toggled) return;    
     _toggled = toggled;
     [self setNeedsDisplay];
 }
 
+-(BOOL)selected {
+	return _selected;
+}
+
 -(void) setSelected:(BOOL)selected {
-    if (_selected == selected) return;    
+    if (_selected == selected) return;
     _selected = selected;
     [self setNeedsDisplay];
 }
@@ -261,12 +267,6 @@
 
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     self.selected = NO;
-}
-
-- (void)dealloc {
-    [_invocation release];
-    _invocation = nil;
-    [super dealloc];
 }
 
 @end
