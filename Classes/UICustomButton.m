@@ -33,7 +33,6 @@
     if ((self = [super initWithCoder:aDecoder])) {
 		CGFloat alpha;
 		[self setOpaque: NO];
-		[self setBackgroundColor: [UIColor clearColor]];
 		
 		if ( ![[self backgroundColor] getHue:&_hue saturation:&_saturation brightness:&_brightness alpha:&alpha] ) {
 			_hue = 1.0;
