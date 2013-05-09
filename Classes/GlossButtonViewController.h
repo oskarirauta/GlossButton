@@ -7,55 +7,38 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CustomButton.h"
+#import "UICustomButton.h"
 
 @interface GlossButtonViewController : UIViewController {
 
-	CustomButton *_button1;
-	CustomButton *_button2;
-	CustomButton *_button3;
-	CustomButton *_button4;
-	CustomButton *_button5;
-	CustomButton *_button6;
-	CustomButton *_button7;
-	CustomButton *_button8;
-	CustomButton *_button9;
-	CustomButton *_button0;
-	CustomButton *_buttonPoint;
+	UICustomButton *_button1, *_button2, *_button3, *_button4, *_button5;
+	UICustomButton *_button6, *_button7, *_button8, *_button9, *_button0;
+	UICustomButton *_buttonPoint, *_buttonPlus, *_buttonMinus, *_buttonDivide;
+	UICustomButton *_buttonMultiply, *_buttonClear, *_buttonEquals, *_buttonPlusminus;
 	
-	CustomButton *_buttonPlus;
-	CustomButton *_buttonMinus;
-	CustomButton *_buttonDivide;
-	CustomButton *_buttonMultiply;
-	CustomButton *_buttonClear;
-	CustomButton *_buttonEquals;
-	CustomButton *_buttonPlusminus;
-	
-
 	NSMutableArray *_buttons;
-
 
 }
 
-@property (retain) CustomButton *button1;
-@property (retain) CustomButton *button2;
-@property (retain) CustomButton *button3;
-@property (retain) CustomButton *button4;
-@property (retain) CustomButton *button5;
-@property (retain) CustomButton *button6;
-@property (retain) CustomButton *button7;
-@property (retain) CustomButton *button8;
-@property (retain) CustomButton *button9;
-@property (retain) CustomButton *button0;
-@property (retain) CustomButton *buttonPoint;
+@property (retain) UICustomButton *button1;
+@property (retain) UICustomButton *button2;
+@property (retain) UICustomButton *button3;
+@property (retain) UICustomButton *button4;
+@property (retain) UICustomButton *button5;
+@property (retain) UICustomButton *button6;
+@property (retain) UICustomButton *button7;
+@property (retain) UICustomButton *button8;
+@property (retain) UICustomButton *button9;
+@property (retain) UICustomButton *button0;
+@property (retain) UICustomButton *buttonPoint;
 
-@property (retain) CustomButton *buttonPlus;
-@property (retain) CustomButton *buttonMinus;
-@property (retain) CustomButton *buttonDivide;
-@property (retain) CustomButton *buttonMultiply;
-@property (retain) CustomButton *buttonEquals;
-@property (retain) CustomButton *buttonClear;
-@property (retain) CustomButton *buttonPlusminus;
+@property (retain) UICustomButton *buttonPlus;
+@property (retain) UICustomButton *buttonMinus;
+@property (retain) UICustomButton *buttonDivide;
+@property (retain) UICustomButton *buttonMultiply;
+@property (retain) UICustomButton *buttonEquals;
+@property (retain) UICustomButton *buttonClear;
+@property (retain) UICustomButton *buttonPlusminus;
 
 @property (retain) NSMutableArray *buttons;
 @end

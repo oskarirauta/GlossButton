@@ -1,7 +1,8 @@
 //
-//  CustomButton.h
+//  UICustomButton.h
 //
-//  Created by Chris Jones.
+//  Updated by Oskari Rauta. Based on original code by Chris Jones.
+//
 //  Copyright 2011 Chris Jones. All rights reserved.
 //
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -14,7 +15,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomButton : UIButton {
+@interface UICustomButton : UIButton {
     BOOL _selected;
 	BOOL _toggled;
     NSInvocation *_invocation;    
@@ -39,4 +40,5 @@
 - (id)initWithText:(NSString *)text target:(id)target selector:(SEL)selector;
 - (id)initWithTextAndHSB:(NSString *)text target:(id)target selector:(SEL)selector hue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness;
 - (void) setLabelWithText:(NSString *)text andSize:(float)size andVerticalShift:(float)shift;
+
 @end
